@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="thanks.html" method="GET">
+        <table width="800" align="center" border="2">
+            <tr>
+                <td colspan="2">
+                    <h2>Registration Details</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="fname">Enter your First Name</label>
+                </td>
+                <td>
+                    <input type="text" id="fname" name="fname" required> 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="lname">Enter your Last Name</label>
+                </td>
+                <td>
+                    <input type="text" id="lname" name="lname">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="pw">Enter your Password</label>
+                </td>
+                <td>
+                    <input type="text" id="pw" name="pw" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   
+                   <label for="DOB"> Enter your DOB </label>
+                </td>
+                <td>
+                    <input type="date" id="DOB" name="DOB" required>
+                </td>
+            </tr>
+           
+            <tr>
+                <td>
+                   Select your gender
+                </td>
+                <td>
+                    <label for="Male"> Male </label>
+                    <input type="radio" id="Male" name="gender" value="Male">
+                    <label for="Female"> Female </label>
+                    <input type="radio" id="Female" name="gender" value="Female">
+                    <label for="Other"> Prefer not to say </label>
+                    <input type="radio" id="Other" name="gender" value="Prefer not to say">
+                </td>
+            </tr>
+              
+            <tr>
+                <td>
+                    <button type="submit">Sign Up</button>
+                </td>
+                <td>
+                   <a href="login.html"> Already have an account? Click here to login!</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
