@@ -1,22 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome-Brewed the Cafe</title>
-  <frameset rows="60,43,560,*">
-    <frame src="logo.html" scrolling="no" frameborder="0">
-    <frame src="table.html" frameborder="1" bordercolor="gray" noresize="noresize" scrolling="no">
-    <frameset cols="200,*">
-     <frame src="side.html" noresize="noresize" scrolling="no" frameborder="0">
-     <frame src="landing.html" noresize="noresize" name="main" frameborder="0">
-    </frameset>
-    <frame src="marquee.html" noresize="noresize" scrolling="no"frameborder="0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#bottombar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  float: center;
+}
+ /* Style the navbar */
+#navbar {
+  overflow: hidden;
+  background-color: #572A17;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
-    </frame>
-   
+/* Navbar links */
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 14px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(128, 65, 46);
+}
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #572A17;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: rgb(253, 252, 252);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: rgb(236, 190, 190);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* Page content */
+.content {
+  padding: 10px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+img{
+  object-fit: fill;
+}
+form {
+  border: 10px solid #dd9086;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 15% from the top and centered */
+  border: 1px solid rgb(172, 91, 91);
+  width: 50%; /* Could be more or less, depending on screen size */
+  padding: 14px;
+}
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #dd9086;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #dd9086;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+/* The Close Button */
+.close {
+  /* Position it in the top right corner outside of the modal */
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+    </style>
+
+
+
+<script>
+    // When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 </head>
+<body>
 
-<body style="background-color: crimson;">
+    
+  
+    <div id="navbar">
+      <a href="topnav-index.html"> <img src="images/logo.png" height="20px"></a>
+        <a href="topnav-index.html">Home</a>
+        <a href="topnav-aboutus.html">About Us</a>
+        <a href="topnav-contactus.html">Contact</a>
+        <div class="dropdown">
+            <button class="dropbtn">Order Online
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="beverages.html">Beverages</a>
+              <a href="waffle.html">Waffles</a>
+              <a href="ice.html">Icecreams</a>
+              <a href="pizza.html">Pizzas</a>
+              <a href="burger.html">Burgers</a>
+            </div>
+          </div>
+</div>
+<br>
+<br>
+<div class="mySlides fade">
+  <img src="images/banner.jpg" style="width:100%; padding: 0%; height: 120%;">
+</div>
+<br><br><br>
+<!-- Button to open the modal login form -->
+<button onclick="document.getElementById('id01').style.display='block'">Login</button>
+
+<!-- The Modal -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+  <form class="modal-content animate" action="/action_page.php">
+    
+    <div class="container">
+      <center><img src="images/icon.PNG" height="100px"></center>
+      <label for="uname"><b>Username</b></label><br>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+<br>
+      <label for="psw"><b>Password</b></label><br>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+<br>
+      <button type="submit">Login</button>
+      <br>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw"> <a href="#">Not a member? Sign Up</a></span><br>
+      <span class="psw"> <a href="#">Forgot password?</a></span>
+    </div>
+  </form>
+</div>
+<br>
+<marquee onmouseover= "this.stop()"
+         onmouseout= "this.start()" ><font color="red">
+
+<a href= "info.html" target="main">25% Discount for all the people who avail a membership.T&C Apply.Click for more...</a></font>
+</marquee>
+<div id="bottombar">
+  <a href="instagram.com/brewed"> <img src="images/instagram-logo.png" height="30px"></a>
+  <a href="facebook.com/brewed"> <img src="images/facebook.png" height="30px"></a>
+</div>
 </body>
 </html>
