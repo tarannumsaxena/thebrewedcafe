@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" href="images/logo.png" type="image/gif" sizes="16x16">
+    <title>Photo Gallery</title>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        .header {
+          text-align: center;
+          padding: 32px;
+        }
+        
+        .row {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap; 
+          flex-wrap: wrap;
+          padding: 0 4px;
+        }
+        .column {
+          -ms-flex: 25%; 
+          flex: 25%;
+          max-width: 25%;
+          padding: 0 4px;
+        }
+        .column img {
+          margin-top: 8px;
+          vertical-align: middle;
+          width: 100%;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+        @media screen and (max-width: 800px) {
+          .column {
+            -ms-flex: 50%;
+            flex: 50%;
+            max-width: 50%;
+          }
+        }
+        
+        @media screen and (max-width: 600px) {
+          .column {
+            -ms-flex: 100%;
+            flex: 100%;
+            max-width: 100%;
+          }
+        }
+        </style>
+<script src="script.js"></script>
+</head>
+<body>
+    <div id="navbar">
+        <a href="index.html"> <img src="images/logo.png" height="20px"></a>
+          <a href="topnav-aboutus.html">About Us</a>
+          <a href="topnav-contactus.html">Contact</a>
+          <a href="gallery.html">Photo Gallery</a>
+          <div class="dropdown">
+              <button class="dropbtn">Order Online
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="beverages.html">Beverages</a>
+                <a href="waffle.html">Waffles</a>
+                <a href="ice.html">Icecreams</a>
+                <a href="pizza.html">Pizzas</a>
+                <a href="burger.html">Burgers</a>
+              </div>
+            </div>
+            <div class="topnav-right">
+              <a href="#search">Cart</a>
+              <a href="#about">Logout</a>
+            </div>
+    </div>
+        <div class="header">
+          <h1>Photo Gallery</h1>
+        </div>
+        
+        <!-- Photo Grid -->
+        <div class="row"> 
+          <div class="column">
+            <img src="images/pexels-the-lazy-artist-gallery-1260599.jpg" style="width:100%">
+            <img src="images/pexels-lisa-fotios-1024359.jpg" style="width:100%">
+            <img src="images/interior_2.jpg" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="images/pexels-cottonbro-4827505.jpg" style="width:100%">
+            <img src="images/pexels-andrea-piacquadio-3764485.jpg" style="width:100%">
+          </div> 
+          <div class="column">
+            <img src="images/pexels-sunyu-kim-2456913.jpg" style="width:100%">
+            <img src="images/pexels-cottonbro-4790055.jpg" style="width:100%">
+          </div> 
+          <div class="column">
+            <img src="images/pexels-ketut-subiyanto-4349844.jpg" style="width:100%">
+            <img src="images/interior.jpg" style="width:100%">
+          </div>  
+        </div>  
+</body>
+</html>
