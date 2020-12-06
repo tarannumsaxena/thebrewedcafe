@@ -12,14 +12,11 @@ body, html {
     text-decoration: none;
     float: center;
   }
-   /* Style the navbar */
   #navbar {
     overflow: hidden;
     background-color: #572A17;
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
-  
-  /* Navbar links */
   #navbar a {
     float: left;
     display: block;
@@ -28,13 +25,10 @@ body, html {
     padding: 14px;
     text-decoration: none;
   }
-  /* The dropdown container */
   .dropdown {
     float: left;
     overflow: hidden;
   }
-  
-  /* Dropdown button */
   .dropdown .dropbtn {
     font-size: 16px;
     border: none;
@@ -45,11 +39,9 @@ body, html {
     font-family: inherit; 
     margin: 0; 
   }
-  
   .navbar a:hover, .dropdown:hover .dropbtn {
     background-color: rgb(128, 65, 46);
   }
-  /* Dropdown content (hidden by default) */
   .dropdown-content {
     display: none;
     position: absolute;
@@ -58,8 +50,6 @@ body, html {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
-  
-  /* Links inside the dropdown */
   .dropdown-content a {
     float: none;
     color: rgb(253, 252, 252);
@@ -68,28 +58,20 @@ body, html {
     display: block;
     text-align: left;
   }
-  /* Add a grey background color to dropdown links on hover */
   .dropdown-content a:hover {
     background-color: rgb(236, 190, 190);
   }
-  
-  /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {
     display: block;
   }
-  /* Page content */
   .content {
     padding: 10px;
   }
-  
-  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
   .sticky {
     position: fixed;
     top: 0;
     width: 100%;
   }
-  
-  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
   .sticky + .content {
     padding-top: 60px;
   }
@@ -101,7 +83,6 @@ body, html {
     width: 32%;
     padding: 8px;
   }
-  
   .price {
     list-style-type: none;
     border: 1px solid #eee;
@@ -110,23 +91,19 @@ body, html {
     -webkit-transition: 0.3s;
     transition: 0.3s;
   }
-  
   .price:hover {
     box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
   }
-  
   .price .header {
     background-color: #572A17;
     color: white;
     font-size: 25px;
   }
-  
   .price li {
     border-bottom: 1px solid #eee;
     padding: 20px;
     text-align: center;
   }
-  
   .price .grey {
     background-color: #eee;
     font-size: 20px;
@@ -140,7 +117,6 @@ body, html {
     text-decoration: none;
     font-size: 18px;
   }
-  
   @media only screen and (max-width: 600px) {
     .columns {
       width: 100%;
@@ -149,7 +125,6 @@ body, html {
   img{
     object-fit: contain;   
   }
-   
   .hero-text {
     text-align: center;
     position: absolute;
@@ -159,13 +134,8 @@ body, html {
     color: white;
   }
   .parallax {
-    /* The image used */
     background-image:  linear-gradient(rgba(73, 37, 37, 0.5), rgba(196, 155, 155, 0.5)),url("images/pexels-karolina-grabowska-4210878.jpg");
-  
-    /* Set a specific height */
     min-height: 500px; 
-  
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -182,11 +152,7 @@ body, html {
   .parallax2 {
     /* The image used */
     background-image: url("images/pexels-marcus-aurelius-4063586.jpg");
-  
-    /* Set a specific height */
     min-height: 600px; 
-  
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -194,13 +160,8 @@ body, html {
     padding: 10px;
   }
   .parallax3 {
-    /* The image used */
     background-image: url("images/pexels-lina-kivaka-1524142.jpg");
-  
-    /* Set a specific height */
     min-height: 500px; 
-  
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
