@@ -25,3 +25,11 @@ function myFunction() {
     x.className = "navbar";
   }
 }
+function myFunction() {
+  var x = document.getElementById("topnavright");
+  if (x.className === "topnav-right") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav-right";
+  }
+}
